@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML Input Attributes</title>
+	</head>
+<body>
+	<form autocomplete="on" novalidate id="form1"> <!-- autocomplete is on for form types; and seems like novalidate doesn't work -->
+		Login: <input type="text" name="lgn" value="Parviz" readonly><br>
+		Login2: <input type="text" name="lgn2" value="Parviz" disabled><br>
+		Login3: <input type="text" name="lgn3" size="10" maxlength="5" autocomplete="off"><br> <!-- autocomplete is off for login 3 -->
+		Login4: <input type="text" name="lgn4" size="10" maxlength="5" autofocus><br> <!-- Remember: autocomplete was turned on -->
+		<input type="submit" value="Submit Data" formtarget="_blank"><br><br>
+	</form>
+	
+	<form id="form2" method="get">
+		Country Code: <input type="text" name="fname" formaction="" pattern="[A-Za-z]{3}" title="Three letter country code"
+		placeholder="abc" required><br>
+		Number: <input type="number" step="5"><br>
+		<datalist id="myBrowser">
+			<option value="Internet Explorer">
+			<option value="Google Chrome">
+			<option value="Mozilla Firefox">
+			<option value="Opera">
+			<option value="Safari">
+		</datalist>
+		Choose a browser: <input list="myBrowser" name="selectedBrowser"><br> <!-- if this line is omitted, then the datalist will not be visible! -->
+		Email: <input type="email" name="myEmail" multiple><br>
+		Select file(s): <input type="file" name="myFile" multiple><br> <!-- seems like I couldn't choose more than a file although I've used multiple attribute -->
+		<input type="submit" value="Submit Data 2" method="post" formenctype="multipart/form-data" formnovalidate><br> <!-- seems like formnovalidate doesn't work -->
+		<input type="image" src="smiley.gif" alt="Submit Image" height="50" width="50"><br><br>
+	</form>
+	
+	Last Name: <input type="text" name="lname" form="form1 form2"><br> <!-- Seems like it's not possible to refer more than one form yet. -->
+</body>
+</html>

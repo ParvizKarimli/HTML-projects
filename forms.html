@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Forms</title>
+</head>
+<body>
+
+<form method="get" oninput="x.value=parseInt(a.value)+parseInt(b.value)" 
+autocomplete="on" id="form1">
+  <fieldset>
+    <legend>Personal Information:</legend>
+	Login:<br>
+	<input type="text" name="login" value="Parviz" readonly><br>
+	Password:<br>
+	<input type="password" name="password" size="10" maxlength="6" required><br>
+	First Name:<br>
+	<input type="text" name="firstname" autocomplete="off"><br>
+	Last Name:<br>
+	<input type="text" name="lastname" autofocus form="form1"><br>
+	<textarea rows="10" cols="30"></textarea><br>
+	Select a car:<br>
+	<select name="car">
+	  <optgroup label="Italian cars">
+	    <option value="ferrari">Ferrari</option>
+	    <option value="lambo" selected>Lamborghini</option>
+	  </optgroup>
+	  <optgroup label="German cars">
+	    <option value="porsche">Porsche</option>
+		<option value="bmw">BMW</option>
+	  </optgroup>
+	</select><br>
+	Browsers:<br>
+	<input list="browsers" name="browser">
+	<datalist id="browsers">
+	  <option value="Google Chrome">
+	  <option value="Mozilla Firefox">
+	  <option value="Opera">
+	  <option value="Safari">
+	  <option value="Internet Explorer">
+	</datalist><br>
+	Gender:<br>
+	<input type="radio" name="gender" value="male" checked>Male<br>
+	<input type="radio" name="gender" value="female">Female<br>
+	Degree:<br>
+	<input type="checkbox" name="degree" value="bachelors">Bachelor's<br>
+	<input type="checkbox" name="degree" value="masters">Master's<br>
+	Color:<br>
+	<input type="color" name="color" value="#32cd32"><br>
+	Date:<br>
+	<input type="date" name="date" max="2010-14-1"><br>
+	Time:<br>
+	<input type="time" name="time"><br>
+	Local date and time:<br>
+	<input type="datetime-local" name="datetime-local"><br>
+	Month and year:<br>
+	<input type="month" name="month"><br>
+	Week and year:<br>
+	<input type="week" name="week"><br>
+	Number:<br>
+	<input type="number" name="number" min="1" max="15" step="2" value="25"><br>
+	Email:<br>
+	<input type="email" name="email"><br>
+	URL:<br>
+	<input type="url" name="url"><br>
+	Tel:<br>
+	<input type="tel" name="tel"><br>
+	Pattern:<br>
+	<input type="text" name="pattern" pattern="[A-Za-z]{3}" title="Three letter country code"
+	placeholder="AZE"><br>
+	Search:<br>
+	<input type="search" name="search"><br>
+	<keygen name="security"><br>
+	0
+	<input type="range" id="a" name="a" value="50">
+	100 + 
+	<input type="number" id="b" name="b" value="50">
+	= 
+	<output name="x" for="a b"></output><br>
+	<input type="button" onclick="alert('Hello world!');" value="Click Me!"><br>
+	<!-- <button></button> is same with <input type="submit" 
+	so for real simple button use <input type="button"> instead of <button> -->
+	File:<br>
+	<input type="file" name="file" multiple><br>
+	<input type="reset"><br>
+	<input type="submit" value="Submit"><br>
+	<input type="submit" value="Submit 2" formmethod="post" formnovalidate><br>
+	<input type="image" src="w3schools.jpg" alt="W3 Schools" width="48" height="48" 
+	formenctype="multipart/form-data" formaction="https://w3schools.com" formtarget="_blank"><br>
+  </fieldset>
+</form>
+
+</body>
+</html>

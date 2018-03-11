@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>HTML Canvas</title>
+</head>
+<body>
+
+<p><canvas id="lineCanvas" width="200" height="100" style="border:1px solid #000000">
+Your browser does not support the HTML5 Canvas tag.
+</canvas></p>
+
+<p><canvas id="circleCanvas" width="200" height="100" style="border:1px solid #000000">
+Your browser does not support the HTML5 Canvas tag.
+</canvas></p>
+
+<p><canvas id="textCanvas" width="200" height="100" style="border:1px solid #000000">
+Your browser does not support the HTML5 Canvas tag.
+</canvas></p>
+
+<p><canvas id="gradientCanvas" width="200" height="100" style="border:1px solid #000000">
+Your browser does not support the HTML5 Canvas tag.
+</canvas></p>
+
+<img src="w3schools.jpg" id="w3s" width="250" height="300" style="display: none;"/>
+
+<p><canvas id="imgCanvas" width="250" height="300" style="border:1px solid #d3d3d3">
+Your browser does not support the HTML5 Canvas tag.
+</canvas></p>
+
+<p><button onclick="showImg()">Show Image</button></p>
+
+<script>
+var c = document.getElementById("lineCanvas");
+var ctx = c.getContext("2d");
+ctx.moveTo(0, 0);
+ctx.lineTo(200, 200);
+ctx.stroke();
+
+var c2 = document.getElementById("circleCanvas");
+var ctx2 = c2.getContext("2d");
+ctx2.beginPath();
+ctx2.arc(95, 50, 40, 0, 2 * Math.PI);
+ctx2.stroke();
+
+var c3 = document.getElementById("textCanvas");
+var ctx3 = c3.getContext("2d");
+ctx3.font = "30px Arial";
+ctx3.fillText("Hello, World!", 10, 50);
+//ctx3.strokeText("HTML5 rocks!", 10, 50);
+
+var c4 = document.getElementById("gradientCanvas");
+var ctx4 = c4.getContext("2d");
+// Create Gradient
+//var grd = ctx4.createLinearGradient(0, 0, 200, 0);
+var grd = ctx4.createRadialGradient(75, 50, 5, 90, 60, 100);
+grd.addColorStop(0, "red");
+grd.addColorStop(1, "white");
+// Fill with gradient
+ctx4.fillStyle = grd;
+ctx4.fillRect(10, 10, 150, 80);
+
+function showImg() {
+	var cImg = document.getElementById("imgCanvas");
+	var ctxImg = cImg.getContext("2d");
+	var img = document.getElementById("w3s");
+	ctxImg.drawImage(img, 10, 10);
+}
+</script>
+
+</body>
+</html>

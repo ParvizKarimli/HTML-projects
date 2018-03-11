@@ -1,0 +1,18 @@
+<p id="demo"></p>
+<button onclick="getLocation()">Get Your Coords</button>
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+	if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	} else {
+		x.innerHTML = "Geolocation is not supported by this browser.";
+	}
+}
+
+function showPosition() {
+	x.innerHTML = "Latitude: " + position.coords.latitude + 
+	"<br>Longtitude: " + position.coords.longtitude;
+}
+</script>
